@@ -18,7 +18,7 @@ with open(sys.argv[1], 'r') as file:
     data = file.readlines()
 
 # May have to change this based on how the log file is written to.
-REGEX_STRING = "val=([-]*[0-9]+)"
+REGEX_STRING = ".*val=([-]*[0-9]+)"
 stringPattern = re.compile(REGEX_STRING)
 
 # Store necessary data in lists
@@ -31,7 +31,7 @@ for s in data:
     if matchObj:
         vals.append(int(matchObj.group(1)))
 
-# Removing outliers from the extracted data
+# Remove outliers from the extracted data
 MEDIAN_WINDOW_SIZE = 20
 
 # Store median values as per the size of the median window
@@ -47,8 +47,6 @@ while medIndex < len(vals):
         break
 
 meds = np.array(meds)
-meds = meds/10
-meds = np.array(meds, dtype ='int')
 
 # Currently against indices, can be changed to the actual timestamp values with some regex modifs
 indicesMeds = list(range(0, len(meds)))
