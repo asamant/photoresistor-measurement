@@ -5,6 +5,7 @@ Code for a very simple Arduino setup involving light intensity measurement using
 Needs 
 - the Arduino IDE, and 
 - minicom
+
 to be installed. Make sure that the following are correctly specified:
 - The Arduino board type (Uno, Mega 2560, etc.)
 - Baud rate (Default = 9600 bps)
