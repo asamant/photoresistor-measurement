@@ -21,5 +21,6 @@ void setup() {
 void loop() {
   // read and print on the serial mon. Can be stored in a log file from there.
   val = analogRead(photoPin);
+  Serial.print("val=");
   Serial.println(val);
 }
